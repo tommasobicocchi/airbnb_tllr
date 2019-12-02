@@ -10,9 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_12_02_150732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.date "checkin_date"
+    t.date "checkout_date"
+    t.bigint "users_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "flat_id", null: false
+    t.index ["flat_id"], name: "index_bookings_on_flat_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+  end
+
+  create_table "flats", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "daily_price"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "users_id", null: false
+    t.string "features"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["users_id"], name: "index_flats_on_users_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "description"
+    t.bigint "bookings_id", null: false
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bookings_id"], name: "index_reviews_on_bookings_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "last_name"
+    t.string "gender"
+    t.string "phone_number"
+    t.date "birthdate"
+    t.string "photo"
+    t.boolean "owner"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "bookings", "flats"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "flats", "users", column: "users_id"
+  add_foreign_key "reviews", "bookings", column: "bookings_id"
 end
