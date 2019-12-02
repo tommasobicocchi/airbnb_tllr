@@ -15,5 +15,5 @@ class User < ApplicationRecord
          validates :birthdate, presence: true
          validates :birthdate, presence: true
          validates :photo, presence: true
-         validates :owner, presence: true
+         #validates :owner, presence: true
 end
