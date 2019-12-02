@@ -7,4 +7,3 @@ class Flat < ApplicationRecord
   validates :daily_price, presence: true
   validates :address, presence: true
 end
-
