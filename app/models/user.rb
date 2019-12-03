@@ -9,7 +9,7 @@ class User < ApplicationRecord
          validates_format_of :email,:with => Devise::email_regexp
          validates :email, presence: true, uniqueness: true
          validates :password, presence: true
-         validates :name, presence: true
+         validates :first_name, presence: true
          validates :last_name, presence: true
          validates :gender, presence: true
          validates :phone_number, presence: true
