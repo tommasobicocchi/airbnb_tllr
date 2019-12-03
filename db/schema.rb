@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_150732) do
+ActiveRecord::Schema.define(version: 2019_12_02_162948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2019_12_02_150732) do
   create_table "bookings", force: :cascade do |t|
     t.date "checkin_date"
     t.date "checkout_date"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "flat_id", null: false
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -33,20 +33,20 @@ ActiveRecord::Schema.define(version: 2019_12_02_150732) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.string "features"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_flats_on_users_id"
+    t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "description"
-    t.bigint "bookings_id", null: false
+    t.bigint "booking_id", null: false
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["bookings_id"], name: "index_reviews_on_bookings_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_150732) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
+    t.string "first_name"
     t.string "last_name"
     t.string "gender"
     t.string "phone_number"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_150732) do
   end
 
   add_foreign_key "bookings", "flats"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "flats", "users", column: "users_id"
-  add_foreign_key "reviews", "bookings", column: "bookings_id"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "flats", "users"
+  add_foreign_key "reviews", "bookings"
 end
