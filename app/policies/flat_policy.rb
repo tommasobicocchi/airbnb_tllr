@@ -8,4 +8,18 @@ class FlatPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def show?
+    return true
+  end
+
+  def edit?
+    return true
+    # record.user == user
+  end
+
+  def update?
+    return true
+    # record.user == user
+  end
 end
