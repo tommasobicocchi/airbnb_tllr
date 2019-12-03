@@ -1,0 +1,7 @@
+<div class="container center text-center">
+<% @reviews.each do |review| %>
+<h1><%=review.rating %></h1>
+<p><%=review.description %></p>
+<br>
+<% end %>
+</div>
