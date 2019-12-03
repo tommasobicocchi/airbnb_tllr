@@ -4,7 +4,7 @@ require 'json'
 require 'open-uri'
 
 
-1.times do
+10.times do
 
 #email
 faker_email = Faker::Internet.email
