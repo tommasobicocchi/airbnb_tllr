@@ -1,4 +1,4 @@
-<div class="container center text-center">
+<div>
 <h1><%=@flat.name %></h1>
 <p><%=@flat.description %></p>
 <p><%=@flat.address%></p>
@@ -6,8 +6,18 @@
 <p><%=@flat.longitude%></p>
 <p><%=@flat.latitude%></p>
 <p><%=@flat.features%></p>
+
+
+<p><% @flat.bookings.each do |booking|  %></p>
+<%= booking.review.rating %>
+<%= booking.review.description %>
+<% end %>
+
+
 <br>
 </div>
+
+
 
 <%= link_to "Book this apartment", new_flat_booking_path(@flat), class: 'btn btn-success mx-2' %>
 <%= link_to "Back", flats_path, class: 'btn btn-light mx-2' %>

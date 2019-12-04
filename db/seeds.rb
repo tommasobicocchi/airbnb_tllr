@@ -131,7 +131,7 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
 
     Review.create!(
       rating: fake_rating,
-      description: review_generator,
+      description: "lol",
       booking_id: (Booking.all).sample.id
       )
   end
