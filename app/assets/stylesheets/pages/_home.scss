@@ -9,9 +9,6 @@
   left: 0;
   background-position: center;
   background-repeat: no-repeat;
-
-
-
   }
 
 
@@ -24,8 +21,7 @@
 
 .container_form {
       text-align: center;
-       padding-top: 320px
-
+      padding-top: 180px
     /* value of your choice which suits your alignment */
 }// Specific CSS f
 
@@ -50,22 +46,17 @@ form.homepage-form input[type=submit] {
     font-weight: bold;
     font-family: Helvetica;
     color: white;
-
-
 }
 
 .container-home {
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
 }
 
 .text h1 {
   color: white;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
   font-size: 45px;
 }

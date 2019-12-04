@@ -1,0 +1,18 @@
+.button {
+  color:white;
+  font-weight: 500;
+  background: transparent;
+  width: 180px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #FE5B5F; /* Green */
+  color: white;
+}
