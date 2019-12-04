@@ -1,1 +1,71 @@
 // Specific CSS for your home-page
+.container {
+  background-image: url('https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+
+  }
+
+
+.center_div {
+    margin: 0 auto;
+    text-align: center;
+    /* value of your choice which suits your alignment */
+}// Specific CSS for your home-page
+
+
+.container_form {
+      text-align: center;
+       padding-top: 320px
+
+    /* value of your choice which suits your alignment */
+}// Specific CSS f
+
+
+form.homepage-form input[type=submit] {
+  color: #fff !important;
+  font-weight: 550;
+  background:  #ff471a;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-family: Helvetica;
+    color: white;
+
+
+}
+
+.container-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+
+}
+
+.text h1 {
+  color: white;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  font-size: 45px;
+}
