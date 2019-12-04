@@ -6,6 +6,14 @@
 <p><%=@flat.longitude%></p>
 <p><%=@flat.latitude%></p>
 <p><%=@flat.features%></p>
+
+
+<p><% @flat.bookings.each do |booking|  %></p>
+<%= booking.review.rating %>
+<%= booking.review.description %>
+<% end %>
+
+
 <br>
 </div>
 
