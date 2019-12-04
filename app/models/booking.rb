@@ -7,7 +7,7 @@ class Booking < ApplicationRecord
 
 
 def no_booking_overlap
-  if (Booking.where("(? BETWEEN checkin_date AND checkout_date OR ? BETWEEN checkin_date AND checkout_date) AND user_id = ?", self.checkin_date, self.checkout_date, self.user_id).any?)
+  if (Booking.where("(? BETWEEN checkin_date AND checkout_date OR ? BETWEEN checkin_date AND checkout_date) AND user_id = ? AND flat_id = ?", self.checkin_date, self.checkout_date, self.user_id, self.flat_id).any?)
      errors.add(:checkout_date, 'it overlaps another reservation')
   end
 end
