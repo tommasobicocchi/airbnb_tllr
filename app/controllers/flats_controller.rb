@@ -14,28 +14,29 @@ class FlatsController < ApplicationController
   end
 
   def create
-      @flat = Flat.new(flat_params)
+    @flat = Flat.new(flat_params)
     authorize @flat
+    @flat.user_id = current_user.id
     if @flat.save
-    redirect_to @flat
+      redirect_to @flat
     else
-    render 'new'
+      render 'new'
+    end
   end
- end
 
   def edit
     @flat = Flat.find(params[:id])
     authorize @flat
   end
 
-   def update
+  def update
     @flat = Flat.find(params[:id])
     @flat.update(flat_params)
     authorize @flat
     if @flat.save
-    redirect_to @flat
+      redirect_to @flat
     else
-    render 'new'
+      render 'new'
     end
   end
 
