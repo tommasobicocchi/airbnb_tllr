@@ -26,6 +26,8 @@ class FlatsController < ApplicationController
 
     def show
       @flat = Flat.find(params[:id])
+      @bookings = Booking.where(flat: @flat)
+      @review = Review.where(booking: @booking)
       authorize @flat
     end
 

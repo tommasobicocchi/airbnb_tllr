@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
   validates :checkin_date, presence: true
   validates :checkout_date, presence: true
   validate :no_booking_overlap
+  has_one :review
 
 
 def no_booking_overlap
