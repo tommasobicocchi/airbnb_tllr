@@ -1,4 +1,4 @@
-<div class="container">
+<div>
 <%= simple_form_for @flat do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -8,3 +8,4 @@
   <%= f.button :submit %>
 <% end %>
 </div>
+<%= link_to "Back", flats_path, class: 'btn btn-light mx-2' %>

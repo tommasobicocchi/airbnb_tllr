@@ -1,8 +1,8 @@
-<div class="container">
+<div>
 <%= simple_form_for [@flat, @booking] do |f| %>
   <%= f.input :checkin_date, as: :string, required: false, input_html: { id: "range_start" } %>
   <%= f.input :checkout_date, as: :string, required: false, input_html: {id: "range_end" } %>
   <%= f.button :submit %>
 <% end %>
 </div>
-
+<%= link_to "Back", dashboard_path, class: 'btn btn-light mx-2' %>
