@@ -58,8 +58,8 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
   url = URI.encode("https://api.mapbox.com/geocoding/v5/mapbox.places/#{faker_address}.json?access_token=pk.eyJ1IjoidHllYSIsImEiOiJjazM4a2pnZTcwOW5sM2dwaTFhYnA0dHhwIn0.qUjpIALowWJUL9MLIxiqWA")
   user_serialized = open(url).read
   #latitude&longitude
-  faker_latitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][0]
-  faker_longitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][1]
+  faker_latitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][0] / 2
+  faker_longitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][1] / 2
   #price
   faker_daily_price = (50..350).to_a.sample
   #img_house
