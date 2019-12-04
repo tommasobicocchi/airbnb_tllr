@@ -1,6 +1,19 @@
 <div class="container center text-center">
-<h1><%=@user.flats %></h1>
-<p><%=@user.bookings %></p>
-</p>
-<br>
+  <h1>Manage Your Flats</h1>
+  <h1><%@user.flats.each do |flat| %></h1>
+  <p> <strong> <%= flat.name %> </strong></p>
+  <p> <%= flat.description %> </p>
+  <%= link_to "edit flat", edit_flat_path(flat), class: 'btn btn-primary' %>
+  <% end %>
+  <h1>Your Bookings</h1>
+  <%@user.bookings.each do |booking| %>
+  <p> <strong><%= booking.flat_id %></strong>  </p>
+  <p>Check-in Date</p>
+  <p> <%= booking.checkin_date %> </p>
+  <p>Check-out Date</p>
+  <p> <%= booking.checkout_date %> </p>
+<%= link_to "New Review for this booking", new_booking_review_path(booking), class: 'btn btn-primary' %>
+  <% end %>
+  <br>
 </div>
+<%= link_to "Back", flats_path, class: 'btn btn-light mx-2' %>
