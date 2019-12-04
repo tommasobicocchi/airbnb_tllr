@@ -1,0 +1,11 @@
+<div class="container">
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :daily_price %>
+  <%= f.input :features %>
+  <%= f.button :submit %>
+<% end %>
+</div>
+<%= link_to "Back", dashboard_path, class: 'btn btn-light mx-2' %>

@@ -1,7 +1,139 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#retrieving from mapbox
+require 'faker'
+require 'json'
+require 'open-uri'
+
+
+10.times do
+
+#email
+faker_email = Faker::Internet.email
+puts faker_email
+#gender
+faker_gender = Faker::Gender.binary_type
+if faker_gender == "Female"
+  #name
+  faker_first_name = Faker::Name.male_first_name
+else
+  faker_first_name = Faker::Name.female_first_name
+end
+  #lastname
+  faker_last_name = Faker::Name.last_name
+  #phonenumber
+  faker_phone_number = Faker::PhoneNumber.phone_number
+  #birthdate
+  faker_age = Faker::Date.in_date_period(year: rand(1930...2000).to_i)
+  #owner
+  faker_owner = [true, false].sample
+  puts faker_owner
+  #password
+  faker_password = Faker::WorldCup
+  puts faker_password
+  #photo
+  faker_img = "https://source.unsplash.com/1600x900/?person"
+
+  def owner_swift
+    User.all.each { |user| user.flats.empty? ? false : true}
+  end
+  #creating_user
+  User.create!(
+    email: faker_email,
+    password: faker_password,
+    first_name: faker_first_name,
+    last_name: faker_last_name,
+    gender: faker_gender,
+    phone_number: faker_phone_number,
+    birthdate: faker_age,
+    photo: faker_img,
+    owner: owner_swift
+    )
+
+  #name
+  faker_name = ["house","villa","apartment","little villa"].sample+ (50..350).to_a.sample.to_s + " mq"
+#description
+faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + Faker::House.room + "and we have also a " + Faker::House.room
+  #address
+  faker_address = Faker::Address.street_address.to_s
+  #Mapboxtogetdata
+  url = URI.encode("https://api.mapbox.com/geocoding/v5/mapbox.places/#{faker_address}.json?access_token=pk.eyJ1IjoidHllYSIsImEiOiJjazM4a2pnZTcwOW5sM2dwaTFhYnA0dHhwIn0.qUjpIALowWJUL9MLIxiqWA")
+  user_serialized = open(url).read
+  #latitude&longitude
+  faker_latitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][0] / 2
+  faker_longitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][1] / 2
+  #price
+  faker_daily_price = (50..350).to_a.sample
+  #img_house
+  faker_img_house = "https://source.unsplash.com/1600x900/?apartment"
+
+  user = (User.all).sample.id
+
+  Flat.create!(
+    name: faker_name,
+    description: faker_description,
+    daily_price: faker_daily_price,
+    address: faker_address,
+    latitude: faker_latitude,
+    longitude: faker_longitude,
+    user_id: (User.all).sample.id
+    )
+
+  #rating
+  fake_rating = rand(1...5).to_i
+  #check_in_date_check_out_date
+  loop do
+    def create_datetime_checkin
+      random_year = rand(2020..2022)
+      random_month = rand(1..12)
+      random_day  = rand(1..30)
+      Date.new(random_year,random_month,random_day)
+    end
+    def create_datetime_checkout
+      random_year = rand(2020..2022)
+      random_month = rand(1..12)
+      random_day  = rand(1..30)
+      Date.new(random_year,random_month,random_day)
+    end
+    break if create_datetime_checkout > create_datetime_checkin
+  end
+  #check_in
+  faker_check_in_date = create_datetime_checkin()
+  #check_out
+  faker_check_out_date = create_datetime_checkout()
+  #create_booking
+
+  def owner_swift
+    User.all.each { |user| user.flats.empty? ? false : true}
+  end
+
+  def review_generator
+    Review.all.each { |review|
+      if review.rating == 5
+        review.description == "great"
+      elsif review.rating == 4
+        review.description == "good"
+      elsif review.rating == 3
+        review.description == "ok"
+      elsif review.rating == 2
+        review.description == "bad"
+      elsif review.rating == 1
+        review.description == "very bad"
+      end
+    }
+    end
+
+    Booking.create!(
+      checkin_date: faker_check_in_date,
+      checkout_date: faker_check_out_date,
+      user_id: faker_daily_price,
+      flat_id: (Flat.all).sample.id,
+      user_id: (User.all).sample.id
+      )
+
+    Review.create!(
+      rating: fake_rating,
+      description: review_generator,
+      booking_id: (Booking.all).sample.id
+      )
+  end
+
+
