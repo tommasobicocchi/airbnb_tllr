@@ -1,6 +1,14 @@
 <div class="container center text-center">
-<h1><%=@user.flats %></h1>
-<p><%=@user.bookings %></p>
-</p>
+<h1><%@user.flats.each do |flat| %></h1>
+<p> <%= flat.name %> </p>
+<p> <%= flat.description %> </p>
+
+ <% end %>
+<%@user.bookings.each do |booking| %>
+<p> <%= booking.flat.name %> </p>
+<p> <%= booking.checkin_date %> </p>
+<p> <%= booking.checkout_date %> </p>
+<% end %>
+
 <br>
 </div>

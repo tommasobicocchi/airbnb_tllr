@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
    def index
     @bookings = policy_scope(Booking).where(user_id: current_user)
+    @flats = policy_scope(Flat).where(flat_id: @user.bookings[0][:flat_id])
    end
 
   def new
