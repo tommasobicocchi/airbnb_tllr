@@ -6,3 +6,5 @@ flatpickr("#range_start", {
   altInput: true,
   plugins: [new rangePlugin({ input: "#range_end"})]
 })
+
+

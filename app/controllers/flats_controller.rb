@@ -1,17 +1,16 @@
 class FlatsController < ApplicationController
   def index
-    @flats = policy_scope(Flat)
-  end
+       @flats = policy_scope(Flat.geocoded) #returns flats with coordinates
 
-  def show
-    @flat = Flat.find(params[:id])
-    authorize @flat
-  end
+       @markers = @flats.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      end
 
-  def new
-    @flat = Flat.new
-    authorize @flat
-  end
+    end
+
 
   def create
     @flat = Flat.new(flat_params)
@@ -24,10 +23,25 @@ class FlatsController < ApplicationController
     end
   end
 
-  def edit
-    @flat = Flat.find(params[:id])
-    authorize @flat
-  end
+
+    def show
+      @flat = Flat.find(params[:id])
+      authorize @flat
+    end
+
+    def new
+      @flat = Flat.new
+      authorize @flat
+    end
+
+
+
+
+    def edit
+      @flat = Flat.find(params[:id])
+      authorize @flat
+    end
+
 
   def update
     @flat = Flat.find(params[:id])
@@ -37,11 +51,12 @@ class FlatsController < ApplicationController
       redirect_to @flat
     else
       render 'new'
+
     end
   end
 
-  private
-  def flat_params
-    params.require(:flat).permit(:name, :description, :daily_price, :address, :features)
+    private
+    def flat_params
+      params.require(:flat).permit(:name, :description, :daily_price, :address, :features)
+    end
   end
-end
