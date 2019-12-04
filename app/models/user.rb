@@ -19,3 +19,4 @@ class User < ApplicationRecord
   validates :photo, presence: true
    # validates :owner, presence: true
 end
+
