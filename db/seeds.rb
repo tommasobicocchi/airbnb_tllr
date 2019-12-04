@@ -28,6 +28,7 @@ end
   puts faker_owner
   #password
   faker_password = Faker::WorldCup
+  puts faker_password
   #photo
   faker_img = "https://source.unsplash.com/1600x900/?person"
 

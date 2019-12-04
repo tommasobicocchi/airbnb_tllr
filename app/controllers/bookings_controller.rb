@@ -2,13 +2,13 @@ class BookingsController < ApplicationController
    before_action :set_booking, only: [:show, :destroy]
 
    def index
-
     @bookings = policy_scope(Booking).where(user_id: current_user)
    end
 
   def new
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.flat_id = params[:flat_id]
     @booking.user_id = current_user.id
+    authorize @booking
     if @booking.save
       redirect_to @flat
     else
