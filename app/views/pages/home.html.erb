@@ -1,6 +1,8 @@
 
 <div class="content-container">
 
+<% if user_signed_in?  %>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
@@ -17,13 +19,33 @@
       <li class="nav-item">
       </li>
     </ul>
-    <a class="nav-link" href="#">Became a host</a>
-    <a class="nav-link" href="#">Sign-up</a>
-    <a class="nav-link" href="#">Login</a>
-    <a class="nav-link" href="#">Logout</a>
-
+    <%= link_to "Became a host", new_flat_path , class: "nav-link" %>
+    <%= link_to "Log-out", destroy_user_session_path , method: :delete, class: "nav-link" %>
+    <%= image_tag current_user.photo , id: "avatar"%>
   </div>
 </nav>
+<% else %>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+    <%= link_to "Sign-up", new_user_registration_path , class: "nav-link" %>
+    <%= link_to "Login", new_user_session_path , class: "nav-link" %>
+  </div>
+</nav>
+<% end %>
 
 <div class="container-home">
 <div class="container_form" >
@@ -36,8 +58,6 @@
   wrapper_mappings: {
     boolean: :inline_boolean
   } do |f| %>
-
-
 <div>
   <%= f.input :where, placeholder: 'Anywhere', input_html: { class: "form mr-2" } %>
   <%= f.input :checkin, placeholder: 'Check-in', input_html: { class: "form mr-2" } %>
@@ -51,7 +71,7 @@
 </div>
 </div>
   <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+
 
 <footer class="footer-adjustment">
   <div class="row">
@@ -94,10 +114,3 @@
     </div>
   </div>
 </footer>
-
-
-
-
-
-
-
