@@ -1,6 +1,7 @@
 .button {
-  color:white;
+  color: #FE5B5F;
   font-weight: 500;
+  font-family: "raleway";
   background: transparent;
   width: 180px;
   padding-top: 6px;
@@ -10,9 +11,42 @@
   border-radius: 5px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  border: 2px solid #FE5B5F;
+  text-decoration: none;
 }
 
 .button:hover {
-  background-color: #FE5B5F; /* Green */
-  color: white;
+  border-left: 4px solid #FE5B5F;
+  color: #FE5B5F;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+  text-decoration: none;
+  transition-duration: 1s; }
+
+  span .button {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
 }
+
+
+span .button:after {
+  content: '\00bb';
+  color: #FE5B5F;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+ span:hover .button {
+  padding-right: 25px;
+}
+
+ span:hover .button:after {
+  opacity: 1;
+  right: 0;
+}
+
+
