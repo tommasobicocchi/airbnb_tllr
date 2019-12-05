@@ -1,4 +1,8 @@
+
 <nav class="navbar navbar-expand-lg nav-background">
+
+
+
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
   <% end %>
@@ -34,17 +38,18 @@
       <% end %>
       <% end %>
     </div>
-    <div class="card my-2 d-flex justify-content-center mx-4">
-      <h1><%= @flat.features %></h1>
+    <div class="card my-2 d-flex justify-content-center text-center mx-4">
+      <h2>Features</h2>
+      <p><%= @flat.features %></p>
     </div>
     <div class="container my-2 d-flex justify-content-center">
       <%= link_to "Back", flats_path, class: 'button' %>
     </div>
 
-    <footer class="footer-adjustment">
+    <footer class="footer-show">
       <div class="row">
         <div class="col-6 col-md">
-          <h5>Airbnb</h5>
+         <h5>Airbnb  <i class="fas fa-home"></i></h5>
           <ul class="list-unstyled text-small">
             <li><a class="" href="#">Opportunità di lavoro</a></li>
             <li><a class="" href="#">News</a></li>
@@ -55,7 +60,7 @@
           </ul>
         </div>
         <div class="col-6 col-md">
-          <h5>Scopri</h5>
+         <h5>Scopri  <i class="fas fa-search-location"></i></h5>
           <ul class="list-unstyled text-small" id="footer-column">
             <li><a class="" href="#">Affidabilità e sicurezza</a></li>
             <li><a class="" href="#">Attività</a></li>
@@ -64,7 +69,7 @@
           </ul>
         </div>
         <div class="col-6 col-md" id="footer-column">
-          <h5>Ospita</h5>
+          <h5>Ospita  <i class="fas fa-bed"></i></h5>
           <ul class="list-unstyled text-small">
             <li><a class="" href="#">Perchè affittare</a></li>
             <li><a class="" href="#">Ospita</a></li>
@@ -73,7 +78,7 @@
           </ul>
         </div>
         <div class="col-6 col-md" id="footer-column">
-          <h5>Rules</h5>
+          <h5>Rules  <i class="fas fa-file-alt"></i></h5>
           <ul class="list-unstyled text-small" >
             <li><a class="" href="#">Termini</a></li>
             <li><a class="" href="#">Privacy</a></li>
