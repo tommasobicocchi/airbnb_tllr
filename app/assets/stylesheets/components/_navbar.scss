@@ -18,7 +18,13 @@
   color: white;
 }
 
- img {
+ .navbar img {
   width: 40px;
+}
+
+.navbar #avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 

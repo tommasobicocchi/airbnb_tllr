@@ -1,28 +1,18 @@
 <div>
-<h1><%=@flat.name %></h1>
-<p><%=@flat.description %></p>
-<p><%=@flat.address%></p>
-<p><%=@flat.daily_price%></p>
-<p><%=@flat.longitude%></p>
-<p><%=@flat.latitude%></p>
-<p><%=@flat.features%></p>
+  <h1><%=@flat.name %></h1>
+  <p><%=@flat.description %></p>
+  <p><%=@flat.address%></p>
+  <p><%=@flat.daily_price%></p>
+  <p><%=@flat.features%></p>
 
 
-<p><% @flat.bookings.each do |booking| %>
-<p> <% if !booking.review.nil? %>  </p>
-<%= booking.review.rating %>
-<%= booking.review.description %>
-<% end %>
-<% end %>
-<p><%= @flat.bookings.first.review.description %></p>
-
-
-
-
-<br>
-</div>
-
-
-
-<%= link_to "Book this apartment", new_flat_booking_path(@flat), class: 'button' %>
-<%= link_to "Back", flats_path, class: 'button' %>
+  <p><% @flat.bookings.each do |booking| %> </p>
+    <p> <% if !booking.review.nil? %>  </p>
+    <%= booking.review.rating %>
+    <%= booking.review.description %>
+    <% end %>
+    <% end %>
+    <br>
+  </div>
+  <%= link_to "Book this apartment", new_flat_booking_path(@flat), class: 'button' %>
+  <%= link_to "Back", flats_path, class: 'button' %>
