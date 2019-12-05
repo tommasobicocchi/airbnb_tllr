@@ -30,7 +30,7 @@ end
   faker_password = Faker::WorldCup
   puts faker_password
   #photo
-  faker_img = "https://source.unsplash.com/1600x900/?person"
+  faker_img = "https://source.unsplash.com/900x900/?person"
 
   def owner_swift
     User.all.each { |user| user.flats.empty? ? false : true}
@@ -63,7 +63,7 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
   #price
   faker_daily_price = (50..350).to_a.sample
   #img_house
-  faker_img_house = "https://source.unsplash.com/1600x900/?apartment"
+  faker_img_house = "https://source.unsplash.com/900x900/?apartment"
 
   user = (User.all).sample.id
 
