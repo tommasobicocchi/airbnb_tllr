@@ -9,8 +9,7 @@
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 5px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+
   border: 2px solid #FE5B5F;
   text-decoration: none;
 }
@@ -22,31 +21,12 @@
   border-bottom: 0px;
   border-right: 0px;
   text-decoration: none;
-  transition-duration: 1s; }
+  }
 
   span .button {
   cursor: pointer;
   position: relative;
-  transition: 0.5s;
 }
 
-
-span .button:after {
-  content: '\00bb';
-  color: #FE5B5F;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
- span:hover .button {
-  padding-right: 25px;
-}
-
- span:hover .button:after {
-  opacity: 1;
-  right: 0;
-}
 
 

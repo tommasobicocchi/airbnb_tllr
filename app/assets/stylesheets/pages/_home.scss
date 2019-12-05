@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 
-.container {
+.content-container {
   background-image: url('https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
   background-size: cover;
   min-width: 100%;
@@ -28,19 +28,6 @@
 }// Specific CSS f
 
 
-form.homepage-form input[type=submit] {
-  color: #fff !important;
-  font-weight: 550;
-  background:  #ff471a;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 5px;
-  display: inline-block;
-  border: none;
-  transition: all 0.4s ease 0s;
-}
 
 .text {
     display: flex;
