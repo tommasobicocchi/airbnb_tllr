@@ -8,6 +8,10 @@
   padding-right: 11px;
   padding-left: 10px;
   border-radius: 5px;
+
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+
   border: 2px solid #FE5B5F;
 }
 .button:hover {
