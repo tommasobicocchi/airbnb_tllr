@@ -1,24 +1,25 @@
-footer {
+.footer-show {
     clear: both;
     margin-top: 100px;
-    font-family: "raleway";
+    font-family: "helvetica";
     background-color: white;
     padding-top: 20px;
+    padding-left: 200px;
 }
 
 
-h5 {
-  color: #FE5B5F;
+.footer-show h5 {
+  color: black;
   font-weight: bold;
 }
 
 
 
-footer a {
-  color: #FE5B5F;
+.footer-show a {
+  color: black;
 }
 
-footer a:hover {
+.footer-show a:hover {
   color: #FE5B5F;
   text-decoration: none;
 }

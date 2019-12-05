@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d4cc68819e36944eff97a8369aec361f8f833c2a
+
 <nav class="navbar-show navbar-expand-lg navbar-light">
   <%= link_to "#", class: "navbar-brand" do %>
   <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
@@ -49,10 +46,10 @@
       <%= link_to "Back", flats_path, class: 'button' %>
     </div>
 
-    <footer class="footer-adjustment">
+    <footer class="footer-show">
       <div class="row">
         <div class="col-6 col-md">
-          <h5>Airbnb</h5>
+         <h5>Airbnb  <i class="fas fa-home"></i></h5>
           <ul class="list-unstyled text-small">
             <li><a class="" href="#">Opportunità di lavoro</a></li>
             <li><a class="" href="#">News</a></li>
@@ -63,7 +60,7 @@
           </ul>
         </div>
         <div class="col-6 col-md">
-          <h5>Scopri</h5>
+         <h5>Scopri  <i class="fas fa-search-location"></i></h5>
           <ul class="list-unstyled text-small" id="footer-column">
             <li><a class="" href="#">Affidabilità e sicurezza</a></li>
             <li><a class="" href="#">Attività</a></li>
@@ -72,7 +69,7 @@
           </ul>
         </div>
         <div class="col-6 col-md" id="footer-column">
-          <h5>Ospita</h5>
+          <h5>Ospita  <i class="fas fa-bed"></i></h5>
           <ul class="list-unstyled text-small">
             <li><a class="" href="#">Perchè affittare</a></li>
             <li><a class="" href="#">Ospita</a></li>
@@ -81,7 +78,7 @@
           </ul>
         </div>
         <div class="col-6 col-md" id="footer-column">
-          <h5>Rules</h5>
+          <h5>Rules  <i class="fas fa-file-alt"></i></h5>
           <ul class="list-unstyled text-small" >
             <li><a class="" href="#">Termini</a></li>
             <li><a class="" href="#">Privacy</a></li>
@@ -90,26 +87,3 @@
         </div>
       </div>
     </footer>
-<<<<<<< HEAD
-=======
-<div>
-  <h1><%=@flat.name %></h1>
-  <p><%=@flat.description %></p>
-  <p><%=@flat.address%></p>
-  <p><%=@flat.daily_price%></p>
-  <p><%=@flat.features%></p>
-
-
-  <p><% @flat.bookings.each do |booking| %> </p>
-    <p> <% if !booking.review.nil? %>  </p>
-    <%= booking.review.rating %>
-    <%= booking.review.description %>
-    <% end %>
-    <% end %>
-    <br>
-  </div>
-  <%= link_to "Book this apartment", new_flat_booking_path(@flat), class: 'button' %>
-  <%= link_to "Back", flats_path, class: 'button' %>
->>>>>>> e57283b32408e8faf11c86f95187b99ea0cbb98f
-=======
->>>>>>> d4cc68819e36944eff97a8369aec361f8f833c2a
