@@ -6,6 +6,15 @@
   padding: 24px;
 }
 
+.card-body {
+  line-height: 1.2;
+}
+
 .bor {
   border-bottom: 1px solid gray;
 }
+ #map {
+  position: sticky;
+  top: 0;
+  background: white;
+ }
