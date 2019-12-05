@@ -11,10 +11,18 @@
 }
 
 .bor {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #d8dfe2;
 }
  #map {
   position: sticky;
   top: 0;
   background: white;
  }
+
+ .card {
+  border: none;
+ }
+
+.carousel-item img {
+  border-radius: 16px;
+}
