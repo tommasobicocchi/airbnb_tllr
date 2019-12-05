@@ -66,11 +66,13 @@
       <div class="card-body">
         <h5 class="card-title"><%=flat.name %></h5>
         <p class="card-text"><%=flat.description %></p>
-        <p class="card-text"><%=flat.daily_price %>$</p>
+        <p class="card-text">Price: <%=flat.daily_price %>$</p>
         <p class="card-text"><%=flat.features %><i class="fas fa-wifi"></i> Wi-Fi</p>
         <p><i class="fas fa-utensils"></i> Kitchen</p>
         <p><i class="fas fa-tv"></i> TV</p>
         <p class="card-text"><small class="text-muted"><%=flat.address%></small></p>
+        <%= link_to "View", flat_path(flat), class: 'button' %>
+
       </div>
     </div>
   </div>
@@ -79,10 +81,10 @@
 <div
   id="map"
   style="width: 80%;
-  height: 600px;"
+  height: 1000px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
->ciao sono qua</div>
+></div>
 
 
 </div>
