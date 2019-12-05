@@ -8,12 +8,13 @@
   <% end %>
   <h1>Your Bookings</h1>
   <%@user.bookings.each do |booking| %>
-  <p> <strong><%= booking.flat_id %></strong>  </p>
+  <p> <strong><%= booking.flat.name %></strong>  </p>
+  <p> <strong><%= booking.flat.address %></strong>  </p>
   <p>Check-in Date</p>
   <p> <%= booking.checkin_date %> </p>
   <p>Check-out Date</p>
   <p> <%= booking.checkout_date %> </p>
-<%= link_to "New Review for this booking", new_booking_review_path(booking), class: 'button' %>
+  <%= link_to "New Review for this booking", new_booking_review_path(booking), class: 'button' %>
   <% end %>
   <br>
 </div>

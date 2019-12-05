@@ -53,13 +53,13 @@ end
 #description
 faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + Faker::House.room + "and we have also a " + Faker::House.room
   #address
-  faker_address = Faker::Address.street_address.to_s
+  faker_address = ["Via Roma, 42", "Piazza De Gasperi, 7","Via Roma, 11 Basiano","Via Duca Uberto, 5 Besate","Via G. Matteotti - Castello Visconteo","Piazza Vittorio Veneto, 16 Bubbiano"].sample
   #Mapboxtogetdata
   url = URI.encode("https://api.mapbox.com/geocoding/v5/mapbox.places/#{faker_address}.json?access_token=pk.eyJ1IjoidHllYSIsImEiOiJjazM4a2pnZTcwOW5sM2dwaTFhYnA0dHhwIn0.qUjpIALowWJUL9MLIxiqWA")
   user_serialized = open(url).read
   #latitude&longitude
-  faker_latitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][0] / 2
-  faker_longitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][1] / 2
+  faker_latitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][0]
+  faker_longitude = JSON.parse(user_serialized)["features"].first["geometry"]["coordinates"][1]
   #price
   faker_daily_price = (50..350).to_a.sample
   #img_house
@@ -105,21 +105,21 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
     User.all.each { |user| user.flats.empty? ? false : true}
   end
 
-  def review_generator
-    Review.all.each { |review|
-      if review.rating == 5
-        review.description == "great"
-      elsif review.rating == 4
-        review.description == "good"
-      elsif review.rating == 3
-        review.description == "ok"
-      elsif review.rating == 2
-        review.description == "bad"
-      elsif review.rating == 1
-        review.description == "very bad"
-      end
-    }
-    end
+  # def review_generator
+  #   Review.all.each { |review|
+  #     if review.rating == 5
+  #       review.description == "great"
+  #     elsif review.rating == 4
+  #       review.description == "good"
+  #     elsif review.rating == 3
+  #       review.description == "ok"
+  #     elsif review.rating == 2
+  #       review.description == "bad"
+  #     elsif review.rating == 1
+  #       review.description == "very bad"
+  #     end
+  #   }
+  #   end
 
     Booking.create!(
       checkin_date: faker_check_in_date,
