@@ -39,8 +39,9 @@
       <% end %>
       <% end %>
     </div>
-    <div class="card my-2 d-flex justify-content-center mx-4">
-      <h1><%= @flat.features %></h1>
+    <div class="card my-2 d-flex justify-content-center text-center mx-4">
+      <h2>Features</h2>
+      <p><%= @flat.features %></p>
     </div>
     <div class="container my-2 d-flex justify-content-center">
       <%= link_to "Back", flats_path, class: 'button' %>
