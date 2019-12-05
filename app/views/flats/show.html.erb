@@ -6,7 +6,7 @@
   <p><%=@flat.features%></p>
 
 
-  <p><% @flat.bookings.each do |booking| %>
+  <p><% @flat.bookings.each do |booking| %> </p>
     <p> <% if !booking.review.nil? %>  </p>
     <%= booking.review.rating %>
     <%= booking.review.description %>
