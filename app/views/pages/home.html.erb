@@ -36,8 +36,6 @@
   wrapper_mappings: {
     boolean: :inline_boolean
   } do |f| %>
-
-
 <div>
   <%= f.input :where, placeholder: 'Anywhere', input_html: { class: "form mr-2" } %>
   <%= f.input :checkin, placeholder: 'Check-in', input_html: { class: "form mr-2" } %>
@@ -51,7 +49,7 @@
 </div>
 </div>
   <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+
 
 <footer class="footer-adjustment">
   <div class="row">
@@ -94,10 +92,3 @@
     </div>
   </div>
 </footer>
-
-
-
-
-
-
-
