@@ -1,4 +1,4 @@
-<div>
+<div class="modal-card">
 <%= simple_form_for @flat do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -7,5 +7,5 @@
   <%= f.input :features %>
   <%= f.button :submit %>
 <% end %>
+<%= link_to "Back", flats_path, class: 'btn btn-light mx-2 justify-content-center text-center' %>
 </div>
-<%= link_to "Back", flats_path, class: 'btn btn-light mx-2' %>
