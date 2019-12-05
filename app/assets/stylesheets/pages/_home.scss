@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+
+
 .container {
   background-image: url('https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
   background-size: cover;
@@ -43,7 +45,7 @@ form.homepage-form input[type=submit] {
 .text {
     display: flex;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 500;
     font-family: Helvetica;
     color: white;
 }
@@ -60,4 +62,13 @@ form.homepage-form input[type=submit] {
   letter-spacing: 3px;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
   font-size: 45px;
+}
+
+
+.differentcolor {
+  color: #FE5B5F;
+}
+
+.form {
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 .nav-link {
   font-weight: 500px;
   color: white;
-  font-family: Helvetica;
+  font-family: "raleway";
   font-size: 14px;
   line-height: 1.43;
   font-size: 16px;
@@ -14,12 +14,12 @@
 }
 
 .nav-link:hover {
-  border-bottom: 2px solid white;
+  border-left: 2px solid #FE5B5F;
   color: white;
+  transition-duration: 2s;
 }
 
  img {
   width: 40px;
-
 }
 

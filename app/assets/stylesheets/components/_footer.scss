@@ -1,0 +1,39 @@
+footer {
+    clear: both;
+    margin-top: 800px;
+    margin-left: 160px;
+    font-family: "raleway";
+    background-color: white;
+}
+
+.footer-column:hover {
+    clear: both;
+    margin-top: 800px;
+    margin-left: 60px;
+}
+
+
+h5 {
+  color: #FE5B5F;
+  font-weight: bold;
+}
+
+.col-md:hover {
+  border-left: 2px solid #FE5B5F;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.05);
+  transition-duration: 2s;
+}
+
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: #FE5B5F;
+  text-decoration: none;
+}
+
+
+
+

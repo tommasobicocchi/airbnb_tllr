@@ -1,3 +1,4 @@
+
 <div class="container">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -27,7 +28,7 @@
 <div class="container-home">
 <div class="container_form" >
   <div class="text mb-3">
-    <h1><strong>Book unique experience to live.</strong></h1>
+    <h1>Book <span class="differentcolor">Unique</span> Experience to <span class="differentcolor">live.</span></h1>
 </div>
   <%= simple_form_for :search,
   wrapper: :inline_form,
@@ -38,17 +39,60 @@
 
 
 <div>
-  <%= f.input :where, placeholder: 'Anywhere', input_html: { class: "mr-2" } %>
-  <%= f.input :checkin, placeholder: 'Check-in', input_html: { class: "mr-2" } %>
-  <%= f.input :checkout, placeholder: 'Checkout', input_html: { class: "mr-2" } %>
-  <%= f.input :age, collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] , prompt: "Guest", input_html: { class: "mr-2" } %>
+  <%= f.input :where, placeholder: 'Anywhere', input_html: { class: "form mr-2" } %>
+  <%= f.input :checkin, placeholder: 'Check-in', input_html: { class: "form mr-2" } %>
+  <%= f.input :checkout, placeholder: 'Checkout', input_html: { class: "form mr-2" } %>
+  <%= f.input :age, collection: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] , prompt: "Guest", input_html: { class: "form mr-2" } %>
 
-  <%= link_to "Search", flats_path, class: 'button'%>
+  <span><%= link_to "Search", flats_path, class: 'button'%></span>
   <% end %>
 </div>
 </div>
 </div>
 </div>
+
+
+<footer class="footer-adjustment">
+  <div class="row">
+    <div class="col-6 col-md">
+      <h5>Airbnb</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="" href="#">Opportunità di lavoro</a></li>
+        <li><a class="" href="#">News</a></li>
+        <li><a class="" href="#">Condizioni</a></li>
+        <li><a class="" href="#">Aiuto</a></li>
+        <li><a class="" href="#">Diversità e appartenenza</a></li>
+        <li><a class="" href="#">Informazioni di contatto</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Scopri</h5>
+      <ul class="list-unstyled text-small" id="footer-column">
+        <li><a class="" href="#">Affidabilità e sicurezza</a></li>
+        <li><a class="" href="#">Attività</a></li>
+        <li><a class="" href="#">Cittadino Airbnb</a></li>
+        <li><a class="" href="#">Viaggi di lavoro</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md" id="footer-column">
+      <h5>Ospita</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="" href="#">Perchè affittare</a></li>
+        <li><a class="" href="#">Ospita</a></li>
+        <li><a class="" href="#">Ospitare responsabilmente</a></li>
+        <li><a class="" href="#">Offri un'esperienza</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md" id="footer-column">
+      <h5>Rules</h5>
+      <ul class="list-unstyled text-small" >
+        <li><a class="" href="#">Termini</a></li>
+        <li><a class="" href="#">Privacy</a></li>
+        <li><a class="" href="#">Mappa del sito</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
 
 
