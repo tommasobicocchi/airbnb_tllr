@@ -1,8 +1,14 @@
-<div class="modal-card">
+<body style="background-image: url('https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');">
+<h2 class="text-center py 10" style="color: white;">Add a Review</h2>
+
+<div class="modal-card mx-auto text-center" style="width: 600px; padding: 20px; margin: 20px; text-decoration-color: black">
 <%= simple_form_for [@booking, @review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
+<div style="margin-top: 30px; margin-bottom: 30px">
 <%= link_to "Back", dashboard_path, class: 'button' %>
 </div>
+</div>
+</body>
