@@ -36,7 +36,7 @@ end
     User.all.each { |user| user.flats.empty? ? false : true}
   end
   #creating_user
-  User.create!(
+  user_new = User.new(
     email: faker_email,
     password: faker_password,
     first_name: faker_first_name,
@@ -44,10 +44,11 @@ end
     gender: faker_gender,
     phone_number: faker_phone_number,
     birthdate: faker_age,
-    photo: faker_img,
     owner: owner_swift
     )
 
+ user_new.remote_photo_url = faker_img
+ user_new.save
   #name
   faker_name = ["House ","Villa ","Apartment ","Little Villa "].sample+ (50..350).to_a.sample.to_s + " Square Meters"
 #description
@@ -67,7 +68,7 @@ faker_description = "We offer you a " + Faker::House.room + ", we have also a " 
 
   user = (User.all).sample.id
 
-  Flat.create!(
+  flat_new = Flat.new(
     name: faker_name,
     description: faker_description,
     daily_price: faker_daily_price,
@@ -76,7 +77,8 @@ faker_description = "We offer you a " + Faker::House.room + ", we have also a " 
     longitude: faker_longitude,
     user_id: (User.all).sample.id
     )
-
+ flat_new.remote_photo_url = faker_img_house
+ flat_new.save
   #rating
   fake_rating = rand(1...5).to_i
   #check_in_date_check_out_date
