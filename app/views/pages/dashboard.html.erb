@@ -1,6 +1,6 @@
-<nav class="navbar-show navbar-expand-lg navbar-light">
-  <%= link_to "#", class: "navbar-brand" do %>
-  <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
+<nav class="navbar navbar-expand-lg nav-background">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,27 +9,23 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
       </li>
-      <li class="nav-item">
-      </li>
-      <li class="nav-item">
-      </li>
     </ul>
-    <a class="nav-link" href="#">Become a host</a>
-    <a class="nav-link" href="#">Sign-up</a>
-    <a class="nav-link" href="#">Login</a>
-    <a class="nav-link" href="#">Logout</a>
+     <%= link_to "Became a host", new_flat_path , class: "nav-link-1" %>
+    <%= link_to "Log-out", destroy_user_session_path , method: :delete, class: "nav-link-1" %>
+    <%= image_tag current_user.photo , class: "avatar avatar-bordered"%>
+
   </div>
 </nav>
 <div>
 
 <div class="card-body card my-2 d-flex justify-content-center text-center mx-4">
-  <h1>Manage Your Flats</h1>
+  <h1 class="text-color">Manage Your Flats</h1>
 <div class="card-trip">
   <img src="https://source.unsplash.com/900x900/?apartment">
   <div class="card-trip-infos">
     <div>
-      <h1><%@user.flats.each do |flat| %></h1>
-      <h2><%= flat.name %> </h2>
+      <p><%@user.flats.each do |flat| %></p>
+      <h2 class="text-color"><%= flat.name %> </h2>
       <p><%= flat.description %></p>
       <p><%= flat.address %></p>
     </div>
@@ -41,17 +37,17 @@
 
 
   <div class="card-body card my-2 d-flex justify-content-center text-center mx-4">
-  <h1>Your Bookings</h1>
+  <h1 class="text-color">Your Bookings</h1>
+  <div class="card-trip">
   <%@user.bookings.each do |booking| %>
-  <p> <strong><%= booking.flat.name %></strong>  </p>
-  <p> <strong><%= booking.flat.address %></strong>  </p>
-  <p>Check-in Date</p>
-  <p> <%= booking.checkin_date %> </p>
-  <p>Check-out Date</p>
-  <p> <%= booking.checkout_date %> </p>
-  <%= link_to "New Review for this booking", new_booking_review_path(booking), class: 'button justify-content-center' %>
+  <h4><%= booking.flat.name %></h4>
+  <h5><%= booking.flat.address %></h5>
+  <p>Check-in Date <%= booking.checkin_date %> </p>
+  <p>Check-out Date <%= booking.checkout_date %> </p>
+  <%= link_to "New Review for this booking", new_booking_review_path(booking), class: 'button' %>
   <% end %>
   <br>
+</div>
 </div>
 
 <div class="card-body justify-content-center text-center">

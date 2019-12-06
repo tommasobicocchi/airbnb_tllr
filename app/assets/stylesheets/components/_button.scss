@@ -3,43 +3,32 @@
   font-weight: 600;
   font-family: "Helvetica";
   background: transparent;
-  padding-top: 6px;
-  padding-bottom: 11px;
-  padding-right: 11px;
-  padding-left: 10px;
-  border-radius: 5px;
-
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-
-  border: 2px solid #FE5B5F;
+  padding: 8px;
+  border: none;
 }
 .button:hover {
-  border-left: 4px solid #FE5B5F;
+  border-bottom: 1px solid #FE5B5F;
   color: #FE5B5F;
-  border-top: 0px;
-  border-bottom: 0px;
-  border-right: 0px;
   text-decoration: none;
-  transition-duration: 1s;
    }
-  span .button {
-  cursor: pointer;
-  position: relative;
-  transition: 0.5s;
+
+.search-button {
+    color: #FE5B5F;
+  font-weight: 600;
+  font-family: "Helvetica";
+  background: transparent;
+  padding: 4px;
+  border: none;
+  border-bottom: 1px solid #FE5B5F;
 }
-span .button:after {
-  content: '\00bb';
-  color: #FE5B5F;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+
+.button-white {
+  color: white;
+  font-size: 24px;
 }
- span:hover .button {
-  padding-right: 25px;
-}
- span:hover .button:after {
-  opacity: 1;
-  right: 0;
+
+.button-white:hover {
+  border-bottom: 1px solid white;
+  color: white;
+  text-decoration: none;
 }

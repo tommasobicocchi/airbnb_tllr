@@ -1,10 +1,9 @@
 .footer-show {
-    clear: both;
+    width: 90%;
     margin-top: 100px;
     font-family: "helvetica";
     background-color: white;
-    padding-top: 20px;
-    padding-left: 200px;
+    margin: 0 auto;
 }
 
 
@@ -16,7 +15,7 @@
 
 
 .footer-show a {
-  color: black;
+  color: gray;
 }
 
 .footer-show a:hover {
