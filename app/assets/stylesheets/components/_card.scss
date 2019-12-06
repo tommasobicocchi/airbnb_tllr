@@ -13,10 +13,10 @@
 .bor {
   border-bottom: 1px solid #d8dfe2;
 }
- #map {
+
+#map {
   position: sticky;
   top: 0;
-  background: white;
  }
 
  .card {
@@ -25,4 +25,6 @@
 
 .carousel-item img {
   border-radius: 16px;
+  height: 1000px;
 }
+
