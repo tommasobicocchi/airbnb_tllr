@@ -20,7 +20,7 @@
 
   </div>
 </nav>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/900x900/?apartment)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @flat.photo %>)">
   <div class="container">
     <h1><strong> <%= @flat.name %> </strong></h1>
     <p><%=@flat.description %></p>
