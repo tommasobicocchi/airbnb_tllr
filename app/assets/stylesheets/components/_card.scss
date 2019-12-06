@@ -13,8 +13,10 @@
 .bor {
   border-bottom: 1px solid gray;
 }
- #map {
+
+#map {
   position: sticky;
   top: 0;
-  background: white;
- }
+  height: 1000px;
+}
+
