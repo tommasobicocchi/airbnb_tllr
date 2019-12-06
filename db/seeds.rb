@@ -49,9 +49,9 @@ end
     )
 
   #name
-  faker_name = ["house","villa","apartment","little villa"].sample+ (50..350).to_a.sample.to_s + " mq"
+  faker_name = ["House ","Villa ","Apartment ","Little Villa "].sample+ (50..350).to_a.sample.to_s + " Square Meters"
 #description
-faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + Faker::House.room + "and we have also a " + Faker::House.room
+faker_description = "We offer you a " + Faker::House.room + ", we have also a " + Faker::House.room + ", on top of that we have a " + Faker::House.room
   #address
   faker_address = ["Via Roma, 42", "Piazza De Gasperi, 7","Via Roma, 11 Basiano","Via Duca Uberto, 5 Besate","Via G. Matteotti - Castello Visconteo","Piazza Vittorio Veneto, 16 Bubbiano"].sample
   #Mapboxtogetdata
@@ -107,15 +107,15 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
 
   def review_generator(x)
       if x == 5
-        return "great"
+        return "Great Experience!"
       elsif x == 4
-        return "good"
+        return "Quite good, but not the best..."
       elsif x == 3
-        return "ok"
+        return "Just ok, I was expecting more."
       elsif x == 2
-        return "bad"
+        return "This was unacceptable, terrible host."
       elsif x == 1
-        return "very bad"
+        return "Avoid at all costs!"
       end
   end
 
