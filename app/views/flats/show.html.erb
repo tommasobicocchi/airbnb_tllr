@@ -3,7 +3,7 @@
 
 
 
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://image.flaticon.com/icons/svg/2111/2111320.svg" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
 
   </div>
 </nav>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://www.newarchstudio.in/images/2019/11/glass_house_bar_area_20191116031300.jpg)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/900x900/?apartment)">
   <div class="container">
     <h1><strong> <%= @flat.name %> </strong></h1>
     <p><%=@flat.description %></p>
