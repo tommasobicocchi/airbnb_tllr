@@ -1,7 +1,8 @@
-<h2>Log in</h2>
+<body style="background-image: url('https://images.unsplash.com/photo-1521464302861-ce943915d1c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');">
+<h2 class="text-center py 10" style="color: white;">Log In</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+<div class="modal-card mx-auto" style="width: 600px; padding: 20px; margin: 20px">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -10,11 +11,11 @@
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
 
-  <div class="form-actions">
+<div class="button text-center" style="margin-top: 30px; margin-bottom: 30px">
     <%= f.button :submit, "Log in" %>
-  </div>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>
+</div>
+</body>

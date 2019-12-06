@@ -49,9 +49,9 @@ end
     )
 
   #name
-  faker_name = ["house","villa","apartment","little villa"].sample+ (50..350).to_a.sample.to_s + " mq"
+  faker_name = ["House ","Villa ","Apartment ","Little Villa "].sample+ (50..350).to_a.sample.to_s + " Square Meters"
 #description
-faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + Faker::House.room + "and we have also a " + Faker::House.room
+faker_description = "We offer you a " + Faker::House.room + ", we have also a " + Faker::House.room + ", on top of that we have a " + Faker::House.room
   #address
   faker_address = ["Via Roma, 42", "Piazza De Gasperi, 7","Via Roma, 11 Basiano","Via Duca Uberto, 5 Besate","Via G. Matteotti - Castello Visconteo","Piazza Vittorio Veneto, 16 Bubbiano"].sample
   #Mapboxtogetdata
@@ -105,20 +105,18 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
     User.all.each { |user| user.flats.empty? ? false : true}
   end
 
-  def review_generator
-    Review.all.map { |review|
-      if review.rating == 5
-        return review.description == "great"
-      elsif review.rating == 4
-        return review.description == "good"
-      elsif review.rating == 3
-        return review.description == "ok"
-      elsif review.rating == 2
-        return review.description == "bad"
-      elsif review.rating == 1
-        return review.description == "very bad"
+  def review_generator(x)
+      if x == 5
+        return "Great Experience!"
+      elsif x == 4
+        return "Quite good, but not the best..."
+      elsif x == 3
+        return "Just ok, I was expecting more."
+      elsif x == 2
+        return "This was unacceptable, terrible host."
+      elsif x == 1
+        return "Avoid at all costs!"
       end
-    }
   end
 
 
@@ -132,7 +130,7 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
 
     Review.create!(
       rating: fake_rating,
-      description: review_generator,
+      description: review_generator(fake_rating),
       booking_id: (Booking.all).sample.id
       )
   end

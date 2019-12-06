@@ -22,7 +22,7 @@
     <%= link_to "Became a host", new_flat_path , class: "nav-link" %>
     <%= link_to "Log-out", destroy_user_session_path , method: :delete, class: "nav-link" %>
 
-    <%= image_tag current_user.photo , class: "avatar avatar-bordered"%>
+    <%= cl_image_tag current_user.photo , class: "avatar avatar-bordered"%>
   </div>
 </nav>
 
@@ -91,5 +91,4 @@
         <% end %>
 
       </div>
-</footer>
 
