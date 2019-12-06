@@ -105,20 +105,18 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
     User.all.each { |user| user.flats.empty? ? false : true}
   end
 
-  def review_generator
-    Review.all.map { |review|
-      if review.rating == 5
-        return review.description == "great"
-      elsif review.rating == 4
-        return review.description == "good"
-      elsif review.rating == 3
-        return review.description == "ok"
-      elsif review.rating == 2
-        return review.description == "bad"
-      elsif review.rating == 1
-        return review.description == "very bad"
+  def review_generator(x)
+      if x == 5
+        return "great"
+      elsif x == 4
+        return "good"
+      elsif x == 3
+        return "ok"
+      elsif x == 2
+        return "bad"
+      elsif x == 1
+        return "very bad"
       end
-    }
   end
 
 
@@ -132,7 +130,7 @@ faker_description = "we Offer you a" + Faker::House.room + ",we have also a " + 
 
     Review.create!(
       rating: fake_rating,
-      description: review_generator,
+      description: review_generator(fake_rating),
       booking_id: (Booking.all).sample.id
       )
   end
