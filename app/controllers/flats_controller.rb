@@ -10,7 +10,7 @@ class FlatsController < ApplicationController
         }
       end
       else
-      @flats = policy_scope(Flat.geocoded).joins(:bookings).where('flats.address ILIKE ? AND bookings.checkin_date > ? AND bookings.checkout_date < ?', "%#{params[:query]}%", "%#{params[:query1]}%", "%#{params[:query2]}%") #returns flats with coordinates
+      @flats = policy_scope(Flat.geocoded)
       @markers = @flats.map do |flat|
         {
           lat: flat.latitude,
